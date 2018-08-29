@@ -30,14 +30,12 @@ public class MainActivity extends AppCompatActivity {
         jugadores = new ArrayList<>();
 
         btn_continuar = findViewById(R.id.btn_continuar);
-
         btn_continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String nombre = et_nombrejugador1.getText().toString();
                 String nombred = et_nombrejugador2.getText().toString();
                 verificarCampos(nombre, nombred);
-                //agregarJugador(db,nombre, nombred);
             }
         });
     }

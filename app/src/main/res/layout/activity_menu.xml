@@ -20,23 +20,35 @@
             android:layout_margin="@dimen/mar_comp"
             android:text="@string/menu"
             android:textSize="30sp" />
+
         <Button
+            android:drawableLeft="@drawable/ic_jugar"
+            android:drawablePadding="@dimen/pad"
             android:id="@+id/btn_jugar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/m_btn_Jugar"
-            android:textAllCaps="false"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/m_btn_High"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:textStyle="bold" />
 
         <Button
+            android:id="@+id/btn_puntajes"
+            android:drawablePadding="@dimen/pad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_highscore"
+            android:text="@string/m_btn_High"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <Button
+            android:drawablePadding="@dimen/pad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_configuracion"
             android:text="@string/m_btn_Conf"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textStyle="bold" />
     </LinearLayout>
 
 

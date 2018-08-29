@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="mar_comp">20dp</dimen>
+    <dimen name="pad">10dp</dimen>
+    <dimen name="tam_img">50dp</dimen>
+    <dimen name="tam_img_card">90dp</dimen>
 </resources>

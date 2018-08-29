@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".Actividades.MainActivity" />
         <activity android:name=".Actividades.MenuActivity" />
-        <activity android:name=".Actividades.GameActivity"></activity>
+        <activity android:name=".Actividades.GameActivity" />
+        <activity android:name=".Actividades.PuntajesActivity"></activity>
     </application>
 
 </manifest>
