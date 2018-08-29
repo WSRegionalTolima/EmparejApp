@@ -5,4 +5,10 @@
     <string name="tv_inombre2">Ingrese Segundo Jugador</string>
     <string name="btn_jugar">Jugar</string>
     <string name="btn_cont">Continuar</string>
+    <string name="menu">Menú</string>
+
+    <!--Componentes Menu-->
+    <string name="m_btn_Jugar">Jugar</string>
+    <string name="m_btn_High">Highscores</string>
+    <string name="m_btn_Conf">Configuracion</string>
 </resources>

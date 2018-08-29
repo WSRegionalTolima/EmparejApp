@@ -1,9 +1,11 @@
-package com.example.worldskills.emparejapp;
+package com.example.worldskills.emparejapp.Actividades;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.worldskills.emparejapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 
