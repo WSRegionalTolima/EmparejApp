@@ -11,7 +11,8 @@ public class DataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE Historial(nombreJugador TEXT," +
+        db.execSQL("CREATE TABLE Historial(indice AUTO_INCREMENT," +
+                "nombreJugador TEXT," +
                 "puntajeobtenido int)");
     }
 

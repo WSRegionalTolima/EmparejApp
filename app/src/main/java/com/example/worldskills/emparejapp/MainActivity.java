@@ -13,6 +13,8 @@ import com.example.worldskills.emparejapp.DataBase.DataBase;
 public class MainActivity extends AppCompatActivity {
 
     DataBase conexion = new DataBase(getApplicationContext(), "Jugadores", null, 1);
+
+
     EditText et_nombrejugador1, et_nombrejugador2;
     Button btn_continuar;
 
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         et_nombrejugador1 = findViewById(R.id.et_nomjug1);
         et_nombrejugador2 = findViewById(R.id.et_nomjug2);
+        SQLiteDatabase db;
 
         btn_continuar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
      * Metodo que Ingresa Un Nuevo JUgador a la base de Datos
      * @param db base de datos a modificar
      */
-    public void agregarJugador(SQLiteDatabase db){
+    public void agregarJugador(SQLiteDatabase db, String jug1, String jug2){
         db = conexion.getWritableDatabase();
 
-        //db.execSQL("INSERT INTO Historial ");
+        db.execSQL("INSERT INTO Historial VALUES (jug1, null),(jug2, null) ");
 
     }
 }
