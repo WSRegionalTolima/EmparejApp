@@ -13,6 +13,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolderJugadore
     ArrayList<Jugador> listaPuntajes;
 
     public Adaptador(ArrayList<Jugador> listaPuntajes) {
+
         this.listaPuntajes = listaPuntajes;
     }
 
@@ -31,7 +32,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolderJugadore
 
     @Override
     public int getItemCount() {
-        return listaPuntajes.size();
+        return 4;
     }
 
     public class ViewHolderJugadores extends RecyclerView.ViewHolder {

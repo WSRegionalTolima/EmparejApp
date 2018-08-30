@@ -48,28 +48,28 @@
 
                 <ImageButton
                     android:id="@+id/btn_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/alt_img_card"
                     android:layout_height="@dimen/tam_img_card"
                     android:layout_weight="1"
                     android:text="Button" />
 
                 <ImageButton
                     android:id="@+id/btn_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/alt_img_card"
                     android:layout_height="@dimen/tam_img_card"
                     android:layout_weight="1"
                     android:text="Button" />
 
                 <ImageButton
                     android:id="@+id/btn_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/alt_img_card"
                     android:layout_height="@dimen/tam_img_card"
                     android:layout_weight="1"
                     android:text="Button" />
 
                 <ImageButton
                     android:id="@+id/btn_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/alt_img_card"
                     android:layout_height="@dimen/tam_img_card"
                     android:layout_weight="1"
                     android:text="Button" />
@@ -82,28 +82,28 @@
 
                 <ImageButton
                     android:id="@+id/btn_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/alt_img_card"
                     android:layout_height="@dimen/tam_img_card"
                     android:layout_weight="1"
                     android:text="Button" />
 
                 <ImageButton
                     android:id="@+id/btn_6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/alt_img_card"
                     android:layout_height="@dimen/tam_img_card"
                     android:layout_weight="1"
                     android:text="Button" />
 
                 <ImageButton
                     android:id="@+id/btn_7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/alt_img_card"
                     android:layout_height="@dimen/tam_img_card"
                     android:layout_weight="1"
                     android:text="Button" />
 
                 <ImageButton
                     android:id="@+id/btn_8"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/alt_img_card"
                     android:layout_height="@dimen/tam_img_card"
                     android:layout_weight="1"
                     android:text="Button" />

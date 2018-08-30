@@ -1,6 +1,7 @@
 package com.example.worldskills.emparejapp.Actividades;
 
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,17 +21,17 @@ import java.util.Collections;
 public class GameActivity extends AppCompatActivity {
 
     int imagenes[];
-    ImageButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8;
+    ImageButton btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, boton1;
     int defecto;
 
     ArrayList<Integer> numeros;
 
-    ImageButton primerBoton = null;
+    static ImageButton primerBoton = null;
     int primero, segundo;
-    boolean bloquear;
+    boolean bloquear = false;
     ImageButton arregloBotones[] = new ImageButton[8];
 
-    MediaPlayer mediaPlayer;
+    MediaPlayer mediaWin, mediaLose;
     TextView tv_Jugador1, tv_Jugador2;
 
     @Override
@@ -39,12 +40,30 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         setearNombreJugadores();
+        asignarImagenes();
         iniciar();
     }
 
     private void iniciar() {
-        asignarImagenes();
-        revolverArreglo(imagenes.length);
+        revolverArreglo(imagenes.length*2);
+        asignarBotones();
+
+        for (int i = 0; i<arregloBotones.length; i++){
+            arregloBotones[i].setScaleType(ImageView.ScaleType.FIT_XY);
+            arregloBotones[i].setImageResource(R.drawable.duda1);
+        }
+
+        for (int i = 0; i < numeros.size(); i++){
+            final int n = i;
+            arregloBotones[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!bloquear) {
+                        comprobarIguales(n, arregloBotones[n]);
+                    }
+                }
+            });
+        }
     }
 
     /**
@@ -111,13 +130,51 @@ public class GameActivity extends AppCompatActivity {
     public void comprobarIguales(int i, final ImageButton btn){
         if (primerBoton == null){
             primerBoton = btn;
+            boton1 = btn;
+            primerBoton.setScaleType(ImageView.ScaleType.FIT_XY);
             primerBoton.setImageResource(imagenes[numeros.get(i)]);
             primero = numeros.get(i);
+
         }else{
             bloquear = true;
+            primerBoton = null;
+            btn.setScaleType(ImageView.ScaleType.FIT_XY);
+            btn.setImageResource(imagenes[numeros.get(i)]);
             segundo = numeros.get(i);
 
+            if (primero == segundo){
+                reproducirWin();
+                bloquear = false;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        boton1.setVisibility(View.INVISIBLE);
+                        btn.setVisibility(View.INVISIBLE);
+                    }
+                },1000);
+
+            }else {
+                reproducirLose();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        boton1.setImageResource(R.drawable.duda1);
+                        btn.setImageResource(R.drawable.duda1);
+                    }
+                },1000);
+                bloquear = false;
+            }
         }
+    }
+
+    public void reproducirWin(){
+        mediaWin = MediaPlayer.create(getApplicationContext(), R.raw.win);
+        mediaWin.start();
+    }
+
+    public void reproducirLose(){
+        mediaLose = MediaPlayer.create(getApplicationContext(), R.raw.lose);
+        mediaLose.start();
     }
 
     /**
