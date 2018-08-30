@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.worldskills.emparejapp.Actividades.MainActivity;
 import com.example.worldskills.emparejapp.R;
+import com.example.worldskills.emparejapp.Tools;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,9 +45,13 @@ public class GameActivity extends AppCompatActivity {
         iniciar();
     }
 
+    /**
+     * Metodo que Inicia el Juego
+     */
     private void iniciar() {
         revolverArreglo(imagenes.length*2);
         asignarBotones();
+        asignarTurno();
 
         for (int i = 0; i<arregloBotones.length; i++){
             arregloBotones[i].setScaleType(ImageView.ScaleType.FIT_XY);
@@ -65,6 +70,8 @@ public class GameActivity extends AppCompatActivity {
             });
         }
     }
+
+
 
     /**
      * Este metodo asigna las imagenes a un arreglo para despues ser asignadas a un boton
@@ -167,11 +174,17 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Metodo que reproduce el sonido cuando se forma una pareja
+     */
     public void reproducirWin(){
         mediaWin = MediaPlayer.create(getApplicationContext(), R.raw.win);
         mediaWin.start();
     }
 
+    /**
+     * Metodo que reproduce el sonido cuando NO se forma una pareja
+     */
     public void reproducirLose(){
         mediaLose = MediaPlayer.create(getApplicationContext(), R.raw.lose);
         mediaLose.start();
@@ -186,5 +199,20 @@ public class GameActivity extends AppCompatActivity {
 
         tv_Jugador2 = findViewById(R.id.nom_Jug2);
         tv_Jugador2.setText(MainActivity.jugadores.get(1).getNombreJugador());
+
+
+    }
+
+    /**
+     * Metodo que asigna el Turno Aleatorio a un jugador
+     */
+    private void asignarTurno() {
+        if (Tools.setTurnoJugar() == 0){
+            tv_Jugador1.setTextColor(getColor(R.color.negro));
+            tv_Jugador2.setTextColor(getColor(R.color.gris));
+        }else{
+            tv_Jugador1.setTextColor(getColor(R.color.gris));
+            tv_Jugador2.setTextColor(getColor(R.color.negro));
+        }
     }
 }
